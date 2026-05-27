@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary:        #0f0f0f;
+    --primary-hover:  #2e2e2e;
+    --bg:             #f5f5f7;
+    --card:           #ffffff;
+    --border:         #e5e7eb;
+    --text:           #111827;
+    --text-muted:     #6b7280;
+    --input-bg:       #f9fafb;
+    --input-bg-focus: #ffffff;
+    --btn-text:       #ffffff;
+    --error-bg:       #fef2f2;
+    --error-border:   #ef4444;
+    --error-text:     #dc2626;
+    --shadow:         0 4px 24px rgba(0, 0, 0, 0.09);
+    --radius:         12px;
+    --radius-sm:      8px;
+}
+
+/* ── Dark Mode ────────────────────────────────────── */
+[data-theme="dark"] {
+    --primary:        #e2e8f0;
+    --primary-hover:  #cbd5e1;
+    --bg:             #111318;
+    --card:           #1c2028;
+    --border:         #2d3139;
+    --text:           #f3f4f6;
+    --text-muted:     #9ca3af;
+    --input-bg:       #252830;
+    --input-bg-focus: #1c2028;
+    --btn-text:       #111318;
+    --error-bg:       #450a0a;
+    --error-border:   #991b1b;
+    --error-text:     #fca5a5;
+    --shadow:         0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    color: var(--text);
+}
+
+/* ── Card ─────────────────────────────────────────── */
+#container-external {
+    background-color: var(--card);
+    width: 380px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 36px 32px 32px;
+    box-shadow: var(--shadow);
+}
+
+/* ── Cabeçalho ────────────────────────────────────── */
+#head-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#head-title h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    text-align: center;
+}
+
+#head-title p {
+    margin-top: 6px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ── Sucesso / link secundário ────────────────────── */
+.sucesso-login {
+    background-color: #f0fdf4;
+    border: 1px solid #22c55e;
+    color: #15803d;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.link-secundario {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.link-secundario a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-secundario a:hover {
+    text-decoration: underline;
+}
+
+/* ── Erro de login ────────────────────────────────── */
+.erro-login {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--error-text);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* ── Campos ───────────────────────────────────────── */
+#boxEmail {
+    margin-bottom: 14px;
+}
+
+#boxSenha {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--input-bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--text-muted);
+    background-color: var(--input-bg-focus);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #c4c4c4;
+}
+
+/* ── Cadastro ─────────────────────────────────────── */
+#container-external.cadastro {
+    width: 420px;
+}
+
+.secao {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.plano-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 10px 12px;
+    background-color: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.plano-badge {
+    flex-shrink: 0;
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ── Botão ────────────────────────────────────────── */
+#botaoEnviar {
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--btn-text);
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+#botaoEnviar:hover {
+    background-color: var(--primary-hover);
+}
+
+#botaoEnviar:active {
+    transform: scale(0.98);
+}
+
+/* ── Botão toggle tema (flutuante) ────────────────── */
+#toggle-tema {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    padding: 0;
+}
+
+#toggle-tema:hover {
+    color: var(--text);
+    border-color: var(--text-muted);
+}
